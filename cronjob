@@ -1,1 +1,2 @@
-* * * * * root /app/trigger_app.sh
+*/3 * * * * /app & python alert.py >> /var/log/cron.log 2>&1
+
