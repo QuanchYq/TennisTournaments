@@ -20,6 +20,7 @@ dp = Dispatcher(bot)
 async def mail():
     await bot.send_message(695064750, 'Hello, Aikyn')
     users = libs.getUsers()
+    print(users)
     todays_events = events.execute(f"SELECT * FROM events WHERE date(date) = '{datetime.date.today()}'").fetchall()
     print(todays_events)
     for event in todays_events:
