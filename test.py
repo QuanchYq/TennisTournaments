@@ -1,2 +1,2 @@
 import libs
-libs.makeAdmin(355060133)
+libs.makeAdmin(695064750)
