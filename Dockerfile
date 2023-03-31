@@ -24,3 +24,4 @@ RUN apt-get update && apt-get install -y cron && \
 CMD ["sh", "-c", "python ttournamentsbot.py & cron -f"]
 
 
+
