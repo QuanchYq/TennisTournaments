@@ -21,6 +21,7 @@ async def mail():
     await bot.send_message(695064750, 'Hello, Aikyn')
     users = libs.getUsers()
     todays_events = events.execute(f"SELECT * FROM events WHERE date(date) = '{datetime.date.today()}'").fetchall()
+    print(todays_events)
     for event in todays_events:
         message = libs.getEventMessage(event)
         for user in users:
