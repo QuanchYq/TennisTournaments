@@ -1,1 +1,1 @@
-* * * * */usr/local/bin/python /app/alert.py >> /var/log/cron.log 2>&1
+* * * * * root /app/trigger_app.sh
