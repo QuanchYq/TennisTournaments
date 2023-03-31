@@ -21,5 +21,5 @@ RUN apt-get update && apt-get install -y cron && \
     
 
 # Запускаем cron в фоновом режиме и отслеживаем логи
-CMD cron && tail -f /var/log/cron.log 
-CMD python ttournamentsbot.py
+CMD python ttournamentsbot.py &
+CMD cron && tail -f /var/log/cron.log
