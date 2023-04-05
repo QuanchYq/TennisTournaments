@@ -428,4 +428,4 @@ async def process_continue(callback_query: types.CallbackQuery, state: FSMContex
 
 if __name__ == '__main__':
     executor.start_polling(dp, skip_updates=True)
-    mail()
+    start_mail()
