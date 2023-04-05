@@ -7,7 +7,7 @@ from aiogram.dispatcher.filters.state import State, StatesGroup
 from aiogram.utils import executor
 
 import alert
-
+from alert import *
 import json
 import keyboards as kb
 import libs
