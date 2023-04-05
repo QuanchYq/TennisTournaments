@@ -13,7 +13,7 @@ COPY ttournamentsbot.py /app/ttournamentsbot.py
 RUN pip install -r requirements.txt
 
 # Запускаем cron в фоновом режиме и отслеживаем логи
-CMD ["python ttournamentsbot.py & python alert.py"]
+CMD ["python", "ttournamentsbot.py","alert.py"]
 
 
 
