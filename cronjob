@@ -1,2 +1,0 @@
-*/3 * * * * /usr/local/bin/python /app/alert.py >> /var/log/cron.log 2>&1
-
