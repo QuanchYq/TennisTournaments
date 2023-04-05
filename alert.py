@@ -44,7 +44,7 @@ async def mail():
     libs.usersVacuum()
 
 
-def start():
+def start_mail():
     # Schedule the mail() function to run every day at 00:10
     schedule.every().day.at("15:55").do(asyncio.run, mail())
 
