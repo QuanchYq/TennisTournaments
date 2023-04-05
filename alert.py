@@ -1,6 +1,8 @@
 import asyncio, sqlite3, datetime
 import json
 import types
+import schedule
+import time
 
 from aiogram import Bot, types
 from aiogram.dispatcher import Dispatcher
@@ -18,11 +20,8 @@ dp = Dispatcher(bot)
 
 
 async def mail():
-    await bot.send_message(695064750, 'Hello, Aikyn')
     users = libs.getUsers()
-    await bot.send_message(695064750, users)
     todays_events = events.execute(f"SELECT * FROM events WHERE date(date) = '{datetime.date.today()}'").fetchall()
-    print(todays_events)
     for event in todays_events:
         message = libs.getEventMessage(event)
         for user in users:
@@ -51,4 +50,10 @@ async def mail():
     libs.usersVacuum()
 
 
-asyncio.run(mail())
+# Schedule the mail() function to run every day at 00:10
+schedule.every().day.at("15:35").do(asyncio.run, mail())
+
+# Run the scheduler loop
+while True:
+    schedule.run_pending()
+    time.sleep(1)
