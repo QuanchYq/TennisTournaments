@@ -6,8 +6,7 @@ from aiogram.dispatcher import FSMContext
 from aiogram.dispatcher.filters.state import State, StatesGroup
 from aiogram.utils import executor
 
-import alert
-from alert import *
+
 import json
 import keyboards as kb
 import libs
@@ -428,4 +427,3 @@ async def process_continue(callback_query: types.CallbackQuery, state: FSMContex
 
 if __name__ == '__main__':
     executor.start_polling(dp, skip_updates=True)
-    start_mail()
