@@ -13,12 +13,6 @@ import libs
 eventsdb = sqlite3.connect('events.db')
 events = eventsdb.cursor()
 
-bot_token = "5902246169:AAH6BRVP1ztgt_BjGtbQbbtUjgS3JvQmq6M"
-
-bot = Bot(token=bot_token, parse_mode="HTML")
-dp = Dispatcher(bot)
-
-print('Успешно запустил alert.py')
 async def mail():
     users = libs.getUsers()
     todays_events = events.execute(f"SELECT * FROM events WHERE date(date) = '{datetime.date.today()}'").fetchall()
@@ -50,10 +44,11 @@ async def mail():
     libs.usersVacuum()
 
 
-# Schedule the mail() function to run every day at 00:10
-schedule.every().day.at("15:55").do(asyncio.run, mail())
+def start():
+    # Schedule the mail() function to run every day at 00:10
+    schedule.every().day.at("15:55").do(asyncio.run, mail())
 
-# Run the scheduler loop
-while True:
-    schedule.run_pending()
-    time.sleep(1)
+    # Run the scheduler loop
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
