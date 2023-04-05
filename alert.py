@@ -51,7 +51,7 @@ async def mail():
 
 
 # Schedule the mail() function to run every day at 00:10
-schedule.every().day.at("16:41").do(asyncio.run, mail())
+schedule.every().day.at("16:44").do(asyncio.run, mail())
 
 # Run the scheduler loop
 while True:
