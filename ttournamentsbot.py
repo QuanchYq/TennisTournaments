@@ -10,8 +10,7 @@ from aiogram.utils import executor
 import json
 import keyboards as kb
 import libs
-eventsdb = sqlite3.connect('events.db')
-events = eventsdb.cursor()
+
 
 bot_token = "5902246169:AAH6BRVP1ztgt_BjGtbQbbtUjgS3JvQmq6M"
 bot_username = "ttournamentsbot"
